@@ -33,7 +33,7 @@ MESONOPTS = " --prefix ${prefix} \
               --sharedstatedir ${sharedstatedir}"
 
 MESON_C_ARGS = "${TARGET_CC_ARCH}${TOOLCHAIN_OPTIONS}"
-MESON_LINK_ARGS = "${TOOLCHAIN_OPTIONS} ${LDFLAGS}"
+MESON_LINK_ARGS = "${MESON_C_ARGS} ${LDFLAGS}"
 
 MESON_HOST_ENDIAN = "${@bb.utils.contains('SITEINFO_ENDIANNESS', 'be', 'big', 'little', d)}"
 MESON_TARGET_ENDIAN = "${@bb.utils.contains('TUNE_FEATURES', 'bigendian', 'big', 'little', d)}"
@@ -75,7 +75,7 @@ endian = '${MESON_HOST_ENDIAN}'
 [target_machine]
 system = '${TARGET_OS}'
 cpu_family = '${TARGET_ARCH}'
-cpu = '${TARGET_ARCH}'
+cpu = '${TUNE_PKGARCH}'
 endian = '${MESON_TARGET_ENDIAN}'
 EOF
 }
