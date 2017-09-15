@@ -5,10 +5,10 @@ LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://COPYING;md5=3b83ef96387f14655fc854ddc3c6bd57"
 
 SRC_URI = " \
-    git://github.com/mesonbuild/meson.git \
+    git://github.com/acfoltzer/meson.git;branch=boost-cross-fix \
 "
 
-SRCREV = "b25d3e4d3f2b4d37029a507cc089bdde643c6240"
+SRCREV = "b1fbd96d9f13b9e8872af7ebf4b568f0a4cdfc71"
 
 S = "${WORKDIR}/git"
 
